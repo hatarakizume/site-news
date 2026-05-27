@@ -49,7 +49,7 @@ class UserLoginSerializer(serializers.Serializer):
                 raise serializers.ValidationError("User not found.")
             if not user.is_active:
                 raise serializers.ValidationError("User account is disabled.")
-            attrs["users"] = user
+            attrs["user"] = user
             return attrs
         else:
             raise serializers.ValidationError("Must include 'email' and 'password'.")
