@@ -56,7 +56,7 @@ class LoginView(generics.GenericAPIView):
         )
 
 
-class ProfileView(generics.GenericAPIView):
+class ProfileView(generics.RetrieveUpdateAPIView):
     serializer_class = UserProfileSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -69,7 +69,7 @@ class ProfileView(generics.GenericAPIView):
         return UserProfileSerializer
 
 
-class ChangePasswordView(generics.GenericAPIView):
+class ChangePasswordView(generics.UpdateAPIView):
     serializer_class = ChangePasswordSerializer
     permission_classes = [permissions.IsAuthenticated]
 
